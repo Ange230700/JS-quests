@@ -1,30 +1,26 @@
-const teamOne = [
-    { name: 'Waffles', age: '19' },
-    { name: 'Fluffy', age: '14' },
-    { name: 'Spelunky', age: '4' },
-    { name: 'Hank', age: '11'  },
-    { name: 'Mia', age: '34'  },
-    { name: 'Bella', age: '8'  },
-    { name: 'Chloe', age: '13'  },
-    { name: 'Daisy', age: '4'  },
-    { name: 'Luna', age: '26'  },
+const cart = [
+    {name: 'eggs', price: 3.99},
+    {name: 'milk', price: 2.99},
+    {name: 'butter', price: 5.99},  
+    {name: 'bread', price: 4.99},
+    {name: 'cereal', price: 5.99},
+    {name: 'cheese', price: 6.99},
+    {name: 'ice cream', price: 3.99},
+    {name: 'juice', price: 2.99},
+    {name: 'coffee', price: 7.99},
+    {name: 'tea', price: 4.99},
+    {name: 'soda', price: 1.99},
+    {name: 'water', price: 0.99},
+    {name: 'chips', price: 3.99},
+    {name: 'cookies', price: 4.99},
+    {name: 'cake', price: 6.99},
+    {name: 'pie', price: 7.99},
+    {name: 'steak', price: 15.99} 
 ];
 
-const teamTwo = [
-    { name: 'Goldie', age: '39' },
-    { name: 'Biscuit', age: '25' },
-    { name: 'Penny', age: '79' },
-    { name: 'Dexter', age: '69' },
-    { name: 'Finn', age: '76' },
-    { name: 'Duke', age: '59' },
-    { name: 'Lucky', age: '19' },
-    { name: 'Sam', age: '18' },
-    { name: 'Teddy', age: '39' },
-];
+const total = cart.reduce(
+    (totalCost, item) => totalCost + item.price,
+    0
+);
 
-function checkIfAdult(array) {
-    return array.every((person) => person.age >= 18);
-}
-
-console.log(checkIfAdult(teamOne));
-console.log(checkIfAdult(teamTwo));
+console.log(total); // 93.92
