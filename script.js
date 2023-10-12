@@ -1,17 +1,21 @@
 const animals = [
-    { name: 'Waffles', species: 'beaver' },
-    { name: 'Fluffy', species: 'duck' },
-    { name: 'Spelunky', species: 'boar' },
-    { name: 'Hank', species: 'groundhog' },
-    { name: 'Mia', species: 'bee' },
-    { name: 'Bella', species: 'hornet' },
-    { name: 'Chloe', species: 'pig' },
-    { name: 'Daisy', species: 'dog' },
-    { name: 'Luna', species: 'cat' }   
+    { name: 'Waffles', species: 'beaver' , emoji: '🦫' },
+    { name: 'Fluffy', species: 'duck', emoji: '🦆' },
+    { name: 'Spelunky', species: 'boar', emoji: '🐗' },
+    { name: 'Hank', species: 'groundhog', emoji: '🦡' },
+    { name: 'Mia', species: 'bee', emoji: '🐝' },
+    { name: 'Bella', species: 'hornet', emoji: '🐝' },
+    { name: 'Chloe', species: 'pig', emoji: '🐖' },
+    { name: 'Daisy', species: 'dog', emoji: '🐕' },
+    { name: 'Luna', species: 'cat', emoji: '🐈' }
 ];
 
 const animalList = document.querySelector('.animal-list');
 
-const animalListItems = animals.map(animal => `<li>${animal.name} is a ${animal.species}</li>`).join('');
-
-animalList.innerHTML = animalListItems;
+const animalListItems = animals.forEach(
+    (animal) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${animal.emoji} ${animal.name} the ${animal.species}`;
+        animalList.append(listItem);
+    }
+);
